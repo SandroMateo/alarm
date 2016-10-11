@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <meta charset="utf-8">
+    <title>Alarm</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Current Time is: <span id="current-time"></span></h1>
+      </div>
+      <div class="form-group">
+        <h2>Set an Alarm:</h2>
+        <form id="set-alarm">
+          <input type="text" id="alarm-time" name="name" placeholder="0:00:00">
+          <button type="submit" class="btn btn-danger">Set Alarm</button>
+        </form>
+      </div>
+      <div id="alarm-display">
+      </div>
+    </div>
+  </body>
+</html>

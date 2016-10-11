@@ -1,0 +1,12 @@
+function update() {
+  var currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+  $("#current-time").text(currentTime);
+}
+$(document).ready(function() {
+  setInterval(update(), 1000);
+  var alarmsArray = [];
+  alarmsArray.forEach(function(alarm) {
+    if(alarm == currentTime && alarm.isActive()) {
+      alert("ALERT! ALERT!");
+    }
+  });
