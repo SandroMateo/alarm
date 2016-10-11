@@ -12,14 +12,29 @@
       <div class="jumbotron">
         <h1>Current Time is: <span id="current-time"></span></h1>
       </div>
-      <div class="form-group">
-        <h2>Set an Alarm:</h2>
-        <form id="set-alarm">
-          <input type="text" id="alarm-time" name="name" placeholder="0:00:00">
-          <button type="submit" class="btn btn-danger">Set Alarm</button>
-        </form>
-      </div>
-      <div id="alarm-display">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <h2>Set an Alarm:</h2>
+            <form id="set-alarm">
+              <input type="text" id="alarm-time" name="name" placeholder="0:00:00">
+              <button type="submit" class="btn btn-danger">Set Alarm</button>
+            </form>
+          </div>
+
+          <div>
+            <ul id="alarm-display">
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div id="snooze">
+            <h1>ALERT! ALERT!</h1>
+            <form id="">
+
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </body>
