@@ -30,13 +30,16 @@ exports.alarmModule = Alarm;
 var Alarm = require("./../js/alarm.js").alarmModule;
 
 $(document).ready(function() {
+  var snoozeAlarm = new Alarm(0);
   var alarmsArray = [];
+  alarmsArray.push(snoozeAlarm);
   setInterval(function() {
     var currentTime = moment().format('H:mm:ss');
     $("#current-time").text(currentTime);
     alarmsArray.forEach(function(alarm) {
       if(alarm.checkAlarm(currentTime)) {
-        alert("ALERT! ALERT!");
+        $("#snooze").show();
+        alarm.setActive(false);
       }
   }, 1000);
   });
@@ -68,6 +71,18 @@ $(document).ready(function() {
         $(this).text(alarmsArray[i].time + " active: " + alarmsArray[i].active);
       }
     }
+  });
+
+  $("#set-snooze").submit(function(event) {
+    event.preventDefault();
+    var minutes = parseInt($("#snooze-time").val());
+    var newTime = moment().add(minutes, 'minutes').format('H:mm:ss');
+    snoozeAlarm.setTime(newTime).setActive(true);
+    $("#snooze").hide();
+  });
+
+  $("#alarm-stop").click(function() {
+    $("#snooze").hide();
   });
 });
 
